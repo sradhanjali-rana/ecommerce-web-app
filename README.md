@@ -113,6 +113,16 @@ Users can enter:
 
 The application displays the predicted conversion probability and conversion prediction.
 
+## Predictive Modeling
+
+The project includes a Logistic Regression model for predicting website session conversion.
+
+The trained model is saved as:
+
+ecommerce_conversion_model.pkl
+
+The model is integrated into the Streamlit application to provide conversion probability predictions for new website sessions.
+
 ## Project Structure
 
 ```text
@@ -124,12 +134,4 @@ ecommerce_web_app/
 ├── ecommerce_conversion_model.pkl
 └── requirements.txt
 
-## Predictive Modeling
 
-The project includes a Logistic Regression model for predicting website session conversion.
-
-The trained model is saved as:
-
-ecommerce_conversion_model.pkl
-
-The model is integrated into the Streamlit application to provide conversion probability predictions for new website sessions.
