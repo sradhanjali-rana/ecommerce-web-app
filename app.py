@@ -43,12 +43,66 @@ if not st.session_state.logged_in:
 # LOAD DATA
 # =========================
 
-orders = pd.read_csv("orders.csv")
-website_sessions = pd.read_csv("website_sessions.csv")
-website_pageviews = pd.read_csv("website_pageviews.csv")
-order_item_refunds = pd.read_csv("order_item_refunds.csv")
-order_items = pd.read_csv("order_items.csv")
-products = pd.read_csv("products.csv")
+st.sidebar.header("Upload Project Data")
+
+orders_file = st.sidebar.file_uploader(
+    "Upload orders.csv",
+    type=["csv"],
+    key="orders_file"
+)
+
+website_sessions_file = st.sidebar.file_uploader(
+    "Upload website_sessions.csv",
+    type=["csv"],
+    key="website_sessions_file"
+)
+
+website_pageviews_file = st.sidebar.file_uploader(
+    "Upload website_pageviews.csv",
+    type=["csv"],
+    key="website_pageviews_file"
+)
+
+order_item_refunds_file = st.sidebar.file_uploader(
+    "Upload order_item_refunds.csv",
+    type=["csv"],
+    key="order_item_refunds_file"
+)
+
+order_items_file = st.sidebar.file_uploader(
+    "Upload order_items.csv",
+    type=["csv"],
+    key="order_items_file"
+)
+
+products_file = st.sidebar.file_uploader(
+    "Upload products.csv",
+    type=["csv"],
+    key="products_file"
+)
+
+all_files_uploaded = all([
+    orders_file,
+    website_sessions_file,
+    website_pageviews_file,
+    order_item_refunds_file,
+    order_items_file,
+    products_file
+])
+
+if not all_files_uploaded:
+    st.info(
+        "Please upload all six project CSV files from the sidebar "
+        "to open the dashboard. The files are not stored in the GitHub repository."
+    )
+    st.stop()
+
+orders = pd.read_csv(orders_file)
+website_sessions = pd.read_csv(website_sessions_file)
+website_pageviews = pd.read_csv(website_pageviews_file)
+order_item_refunds = pd.read_csv(order_item_refunds_file)
+order_items = pd.read_csv(order_items_file)
+products = pd.read_csv(products_file)
 
 model = joblib.load("ecommerce_conversion_model.pkl")
 
