@@ -99,6 +99,8 @@ e-commerce data analysis.
 ```text
 ecommerce_web_app/
 │
+├── README.md
+├── Ecommerce_Data_Analysis_Python.ipynb
 ├── app.py
-├── requirements.txt
-└── README.md
+├── ecommerce_conversion_model.pkl
+└── requirements.txt
