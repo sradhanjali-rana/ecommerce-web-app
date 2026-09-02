@@ -13,11 +13,13 @@ refund analysis, and business insights.
 
 - Python
 - Pandas
+- Scikit-learn
+- Joblib
 - Streamlit
 
 ## Data Sources
 
-The application uses the following six datasets:
+The application was developed using six e-commerce datasets:
 
 - Orders
 - Order Items
@@ -25,6 +27,8 @@ The application uses the following six datasets:
 - Products
 - Website Pageviews
 - Website Sessions
+
+The raw datasets are not included in this repository.
 
 ## Dashboard Sections
 
@@ -94,6 +98,21 @@ Includes:
 Provides key findings and business recommendations based on the
 e-commerce data analysis.
 
+### 7. Conversion Prediction
+
+Provides a machine-learning based prediction of whether a website session is likely to convert.
+
+Users can enter:
+
+- Repeat Session
+- Marketing Source
+- Marketing Campaign
+- Marketing Content
+- Device Type
+- HTTP Referrer
+
+The application displays the predicted conversion probability and conversion prediction.
+
 ## Project Structure
 
 ```text
@@ -104,3 +123,13 @@ ecommerce_web_app/
 ├── app.py
 ├── ecommerce_conversion_model.pkl
 └── requirements.txt
+
+## Predictive Modeling
+
+The project includes a Logistic Regression model for predicting website session conversion.
+
+The trained model is saved as:
+
+ecommerce_conversion_model.pkl
+
+The model is integrated into the Streamlit application to provide conversion probability predictions for new website sessions.
